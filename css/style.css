@@ -94,7 +94,6 @@ nav a:hover {
     text-align: left;
     overflow: hidden;
     border-radius: 20px;
-    border: red 20px solid transparent;
     box-shadow: 0 4px 80px rgba(136, 107, 35, 0.904);
 }
 
@@ -153,6 +152,7 @@ nav a:hover {
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .planet {
@@ -233,10 +233,7 @@ footer {
     }
 
     .planet-grid {
-        display: grid;
-        width: auto;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        justify-content: center;
+        justify-items: center;
     }
 }
