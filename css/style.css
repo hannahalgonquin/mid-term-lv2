@@ -78,7 +78,7 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background 0.3s;
 }
 
@@ -86,21 +86,23 @@ nav a:hover {
     background: yellow;
     color: var(--primary-color);
     transform: scale(1.1);
+    padding: 10px;
 }
 
 .milky-way {
     position: relative;
     text-align: left;
     overflow: hidden;
+    border-radius: 20px;
+    border: red 20px solid transparent;
+    box-shadow: 0 4px 80px rgba(136, 107, 35, 0.904);
 }
 
 .milky-way img {
     width: 100%;
     min-width: 900px;
     height: auto;
-    border-radius: 20px;
     animation: zoom 30s infinite linear;
-    box-shadow: 0 4px 8px rgba(136, 107, 35, 0.904);
 }
 
 @keyframes zoom {
@@ -232,8 +234,9 @@ footer {
 @media (max-width: 500px) {
     .planet-grid {
         display: grid;
+        width: auto;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
-        align-items: center;
+        justify-content: center;
     }
 }
