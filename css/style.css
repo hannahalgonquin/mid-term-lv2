@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #00BFFF; /* Adjust to your preferred accent color */
+    --primary-color: #00BFFF;
 }
 
 body {
@@ -10,152 +10,10 @@ body {
     background: #000;
     color: #fff;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.h1 highlight::after {
-        content: '';
-        display: block;
-        height: 5px;
-        width: 100%;
-        background: var(--primary-color);
-        position: absolute;
-        z-index: -1;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.highlight::after {
-    content: '';
-    display: block;
-    height: 5px;
-    width: 100%;
-    background: var(--primary-color);
-    position: absolute;
-    z-index: -1;
-}
-
-.hero {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-}
-
-.milky-way img {
-    width: 100%;
-    height: auto;
-    animation: zoom 30s infinite linear;
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 
-                0 0 40px rgba(0, 191, 255, 0.8), 
-                0 0 60px rgba(0, 191, 255, 0.8);
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(42, 37, 7, 0.243), 
-                    0 0 40px rgba(255, 221, 0, 0.5), 
-                    0 0 60px rgba(255, 221, 0, 0.5);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 
-                    0 0 50px rgba(0, 191, 255, 0.5), 
-                    0 0 70px rgba(0, 191, 255, 0.5);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(0, 191, 255, 0.3), 
-                    0 0 40px rgba(0, 191, 255, 0.3), 
-                    0 0 60px rgba(0, 191, 255, 0.3);
-    }
-}
-
-.milky-text {
-    position: relative;
-    padding: 20px;
-    bottom: 100px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-
-.color-change {
-    color: var(--primary-color);
-    animation: colorChange 5s infinite;
-}
-
-@keyframes colorChange {
-    0% {
-        color: var(--primary-color);
-    }
-    50% {
-        color: #fff;
-    }
-    100% {
-        color: var(--primary-color);
-    }
-}
-
-.locals {
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.planet-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.planet {
-    max-width: 150px;
-    text-align: center;
-}
-
-.planet img {
-    width: 100%;
-    height: auto;
-}
-
-.planet a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.planet a:hover {
-    background: #fff;
-    color: var(--primary-color);
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #111;
-}
-
+/* Skip Link */
 .skip-link {
     position: absolute;
     left: -999px;
@@ -175,10 +33,174 @@ footer {
     z-index: 1000;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0 1rem;
+    font-family: 'Playfair Display'; serif;
+    font-size: 2rem;
+}
+
+/* h1 Stripe */
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    height: 0.5em;
+    width: 100%;
+    left: 0;
+    bottom: 10px;
+    background: rgba(8, 35, 207, 0.974);
+    z-index: -1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: yellow;
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.milky-way {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.milky-way img {
+    width: 100%;
+    min-width: 900px;
+    height: auto;
+    animation: zoom 30s infinite linear;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(136, 107, 35, 0.904), 
+}
+
+@keyframes zoom {
+    from { transform: scale(1);} 
+    to { transform: scale(1.5);}
+}
+
+.milky-text {
+    position: absolute;
+    text-align: left;
+    padding: 20px;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 5;
+}
+
+.p {
+    font-size: 1rem;
+}
+
+.h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.colorShift {
+    background: -webkit-linear-gradient(0deg, blue, red);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shift 5s;
+}
+
+@keyframes shift {
+    from (background-position: 0% 0%;)
+    to (background-position: 100% 0%;)
+}
+
+.locals {
+    text-align: left;
+    padding: 2rem 0;
+}
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.planet {
+    max-width: 200px;
+    text-align: center;
+}
+
+.planet img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.planet a {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.planet a:hover {
+    background: yellow;
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.planet a:visited {
+    background-color: purple;
+}
+
+a:focus {
+    outline: 2px solid rgb(255, 0, 0);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #000000;
+}
+
 .contact-button {
     background: var(--primary-color);
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background 0.3s;
 }
 
@@ -188,21 +210,32 @@ footer {
 }
 
 @media (max-width: 900px) {
-    .planet-grid {
+    header {
         flex-direction: column;
+    }
+
+    .milky-text {
+        text-align: center;
+    }
+
+    .locals {
+        text-align: center;
+    }
+
+    .planet-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 500px) {
+
     nav ul {
         flex-direction: column;
+        align-items: center;
     }
 
-    .hero-text {
-        top: 30%;
-    }
-
-    .locals {
-        padding: 1rem;
+    .planet-grid {
+        grid-template-columns: 1fr;
     }
 }
